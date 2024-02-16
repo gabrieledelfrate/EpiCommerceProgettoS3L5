@@ -19,12 +19,13 @@ namespace eCommerceProgettoS3L5
         }
         protected void Page_Load(object sender, EventArgs e)
         {
+        
             if (!IsPostBack)
             {
                 LoadProductData();
             }
-
-        }
+            
+        }       
 
         protected void AddToCartButton_Click(object sender, EventArgs e)
         {
@@ -70,6 +71,14 @@ namespace eCommerceProgettoS3L5
             cart.Add(product);
 
             Session["Cart"] = cart;
+        }
+
+        protected void ViewDetailsButton_Click(object sender, EventArgs e)
+        {
+            Button btnViewDetails = (Button)sender;
+            string productId = btnViewDetails.CommandArgument;
+
+            Response.Redirect("ProductDetail.aspx?ProductId=" + productId);
         }
     }
 }
