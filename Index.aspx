@@ -12,7 +12,7 @@
                             <div class="card-body">
                                 <h4 class="card-title"><%# Eval("Name") %></h4>
                                 <p class="card-text"><%# Eval("Description") %></p>
-                                <p class="card-text">Prezzo: $<%# Eval("Price") %></p>
+                                <p class="card-text">Prezzo: €<%# Eval("Price") %></p>
                                 <asp:Button runat="server" ID="AddToCartButton" Text="Aggiungi al carrello" CssClass="btn btn-primary" OnClick="AddToCartButton_Click" CommandArgument='<%# Eval("ProductID") + "|" + Eval("Name") + "|" + Eval("Price") %>' />
                                 <button class="btn btn-warning">Vedi dettagli</button>
                             </div>

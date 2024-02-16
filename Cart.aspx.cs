@@ -40,5 +40,29 @@ namespace eCommerceProgettoS3L5
             }
             return totalAmount;
         }
+
+        protected void RemoveFromCartButton_Command(object sender, CommandEventArgs e)
+        {            
+            int itemIndex = Convert.ToInt32(e.CommandArgument);
+
+            List<Product> cart = Session["Cart"] as List<Product>;
+
+            cart.RemoveAt(itemIndex);
+
+            Session["Cart"] = cart;
+
+            Response.Redirect(Request.RawUrl);
+        }
+
+        protected void EmptyCartButton_Click(object sender, EventArgs e)
+        {            
+            List<Product> cart = Session["Cart"] as List<Product>;
+
+            cart.Clear();
+                        
+            Session["Cart"] = cart;
+
+            Response.Redirect(Request.RawUrl);
+        }
     }
 }
