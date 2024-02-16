@@ -15,48 +15,39 @@ namespace eCommerceProgettoS3L5
     {
 
         /// <summary>
-        /// Controllo ImagePath.
+        /// Controllo ProductImage.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ImagePath;
+        protected global::System.Web.UI.WebControls.Image ProductImage;
 
         /// <summary>
-        /// Controllo NameLabel.
+        /// Controllo ProductNameLabel.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NameLabel;
+        protected global::System.Web.UI.WebControls.Label ProductNameLabel;
 
         /// <summary>
-        /// Controllo PriceLabel.
+        /// Controllo ProductPriceLabel.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label PriceLabel;
+        protected global::System.Web.UI.WebControls.Label ProductPriceLabel;
 
         /// <summary>
-        /// Controllo ExtendedDescriptionLabel.
+        /// Controllo ProductDescriptionLabel.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ExtendedDescriptionLabel;
-
-        /// <summary>
-        /// Controllo AddToCartButton.
-        /// </summary>
-        /// <remarks>
-        /// Campo generato automaticamente.
-        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddToCartButton;
+        protected global::System.Web.UI.WebControls.Label ProductDescriptionLabel;
     }
 }

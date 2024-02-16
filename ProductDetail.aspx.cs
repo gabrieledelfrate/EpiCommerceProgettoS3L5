@@ -12,40 +12,40 @@ namespace eCommerceProgettoS3L5
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Recupera l'ID del prodotto dall'URL
-            string productId = Request.QueryString["ProductId"];
+            if (!IsPostBack)
+            {                
+                if (Request.QueryString["ProductId"] != null)
+                {
+                    string productId = Request.QueryString["ProductId"];                    
 
-            if (string.IsNullOrEmpty(productId))
-            {
-                // ID del prodotto non trovato
-                Response.Redirect("Index.aspx");
-                return;
+                    List<Index.Product> products = GetProducts();
+                    Index.Product selectedProduct = products.FirstOrDefault(p => p.ProductID == productId);
+
+                    if (selectedProduct != null)
+                    {                        
+                        ProductNameLabel.Text = selectedProduct.Name;
+                        ProductImage.ImageUrl = selectedProduct.ImagePath;
+                        ProductDescriptionLabel.Text = selectedProduct.Description;
+                        ProductPriceLabel.Text = "Prezzo: " + selectedProduct.Price.ToString("C"); // Formatta il prezzo come valuta
+                    }
+                }
             }
-
-            // Recupera i prodotti dal carrello
-            List<Product> cart = Session["Cart"] as List<Product>;
-
-            // Cerca il prodotto nella lista in base all'ID
-            Product selectedProduct = cart?.FirstOrDefault(p => p.ProductID == productId);
-
-            if (selectedProduct == null)
-            {
-                // Prodotto non trovato nel carrello
-                Response.Redirect("Index.aspx");
-                return;
-            }
-
-            // Imposta i dettagli del prodotto
-            ImagePath.ImageUrl = selectedProduct.ImagePath;
-            NameLabel.Text = selectedProduct.Name;
-            PriceLabel.Text = $"Prezzo: €{selectedProduct.Price}";
-            ExtendedDescriptionLabel.Text = selectedProduct.Description;
         }
 
-        protected void AddToCartButton_Click(object sender, EventArgs e)
+        
+        private List<Index.Product> GetProducts()
         {
-            // Reindirizza alla pagina del carrello per gestire l'aggiunta
-            Response.Redirect("ShoppingCart.aspx");
+            List<Index.Product> products = new List<Index.Product>
+             {
+  new Index.Product { ProductID = "1", ImagePath = ResolveUrl("~/Images/image1.jpg"), Name = "GeForce RTX 4090", Description = "Meglio della 4070 Ti.", Price = 1000.00m },
+  new Index.Product { ProductID = "2", ImagePath = ResolveUrl("~/Images/image2.jpg"), Name = "GeForce RTX 4070 Ti", Description = "Peggio della 4090.", Price = 900.00m },
+  new Index.Product { ProductID = "3", ImagePath = ResolveUrl("~/Images/image3.jpg"), Name = "GeForce RTX 4080", Description = "Una via di mezzo.", Price = 950.00m },
+  new Index.Product { ProductID = "4", ImagePath = ResolveUrl("~/Images/image4.jpg"), Name = "GeForce RTX 3060", Description = "Non hai soldi? Prendi questa.", Price = 50.00m },
+  new Index.Product { ProductID = "5", ImagePath = ResolveUrl("~/Images/image5.jpg"), Name = "AMD Radeon RX 6650 XT", Description = "Inaffidabile come poche cose al mondo.", Price = 200.00m },
+  new Index.Product { ProductID = "6", ImagePath = ResolveUrl("~/Images/image6.jpg"), Name = "AMD Radeon RX 580", Description = "Non so se vi conviene.", Price = 400.00m },
+ };
+
+            return products;
         }
     }
 }

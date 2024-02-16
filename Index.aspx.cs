@@ -76,9 +76,15 @@ namespace eCommerceProgettoS3L5
         protected void ViewDetailsButton_Click(object sender, EventArgs e)
         {
             Button btnViewDetails = (Button)sender;
-            string productId = btnViewDetails.CommandArgument;
+            string[] args = btnViewDetails.CommandArgument.Split('|');
 
-            Response.Redirect("ProductDetail.aspx?ProductId=" + productId);
+            string productId = args[0];
+            string productName = args[1];
+            string productDescription = args[2];
+            decimal productPrice = decimal.Parse(args[3]);
+            string imagePath = args[4];
+
+            Response.Redirect($"ProductDetail.aspx?ProductId={productId}&Name={productName}&Description={productDescription}&Price={productPrice}&ImagePath={imagePath}");
         }
     }
 }
