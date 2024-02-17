@@ -14,7 +14,7 @@
                             <asp:Label runat="server" class="card-title" ID="ProductNameLabel"></asp:Label>
                             <asp:Label runat="server" class="card-text" ID="ProductPriceLabel"></asp:Label>
                             <asp:Label runat="server" class="card-text" ID="ProductDescriptionLabel"></asp:Label>
-                            <%--<asp:Button runat="server" ID="AddToCartButton" Text="Aggiungi al carrello" CssClass="btn btn-primary" OnClick="AddToCartButton_Click" />--%>
+                            <asp:Button runat="server" ID="AddToCartButton" Text="Aggiungi al carrello" CssClass="btn btn-primary" OnClick="AddToCartButton_Click" />
                         </div>
                     </div>
                 </div>
