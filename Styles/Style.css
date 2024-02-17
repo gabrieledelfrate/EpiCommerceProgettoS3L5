@@ -1,0 +1,26 @@
+﻿body {
+    font-family: 'Lucida Console';
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+}
+
+#product-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.card-text {
+    margin-top: 10px;
+}
+
+footer{
+    text-align: center;
+}

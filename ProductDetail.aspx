@@ -10,7 +10,7 @@
                         <asp:Image runat="server" ID="ProductImage" CssClass="card-img-top" />
                     </div>
                     <div class="col-md-8">
-                        <div class="card-body">
+                        <div class="card-body" id="product-details">
                             <asp:Label runat="server" class="card-title" ID="ProductNameLabel"></asp:Label>
                             <asp:Label runat="server" class="card-text" ID="ProductPriceLabel"></asp:Label>
                             <asp:Label runat="server" class="card-text" ID="ProductDescriptionLabel"></asp:Label>
